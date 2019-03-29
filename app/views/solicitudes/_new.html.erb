@@ -1,0 +1,31 @@
+<h2>Nuevo requerimiento</h2>
+<%= form_for(@solicitud) do |form| %>
+	<div class="row">
+		<div class="col">
+			<%= form.label :titulo, 'Título', class: "control-label required" %>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col">
+			<div class="form-group">
+				<%= form.text_field :titulo, {class: "form-control", required: true, maxlength: 100, placeholder: 'TITULO DE LA SOLICITUD'} %>
+			</div>
+		</div>
+	</div>
+	<div class="row">	
+		<div class="col">
+			<%= form.label :descripcion, 'Descripción', class: "control-label required" %>
+		</div>				
+	</div>	
+	<div class="row">
+		<div class="col">
+			<div class="form-group">				
+				<%= form.text_area :descripcion, {:class => "tinymce", :rows => 15, :cols => 120, placeholder: 'DESCRIPCION DE LA SOLICITUD'} %>
+				<%= tinymce %>
+			</div>
+		</div>		
+	</div>	
+  	<div class="actions text-right">
+        <%= form.submit "Publicar", class: "btn btn-primary" %>    
+    </div>    
+<% end %>

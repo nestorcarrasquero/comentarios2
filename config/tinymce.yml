@@ -1,0 +1,7 @@
+toolbar:
+  [ styleselect | media | bold italic | undo redo | image | link, alignleft aligncenter alignright | outdent indent | bulllist numlist ]
+plugins:
+  image
+  link
+  media
+  list

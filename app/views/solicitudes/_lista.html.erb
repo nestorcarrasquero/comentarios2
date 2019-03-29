@@ -1,0 +1,41 @@
+<script>
+    $(function() {
+    	$('#order').change(function(){
+            $.ajax({
+            	url: 'solicitudes/search',
+            	type: 'GET',
+            	data: {
+            		order: this.value
+            	},
+            	success: function(data, textStatus, xhr){
+      				$("#lista").html(data)
+    			},
+            })
+    	})
+    });
+</script>
+
+<% if !@solicitudes.nil? and @solicitudes.size > 0 %>
+    <table class="table table-hover">    
+    	<% @solicitudes.each do |x| %>
+    	    <thead>
+    	    	<th colspan="2"><%= x.titulo %>&nbsp;
+    	    		<%= link_to solicitud_valorar_path(x.id,'like') do %>
+    	    		  <span class="oi oi-thumb-up" title="Me gusta" aria-hidden="true"></span><%= x.positivo %>
+    	    		<% end %>
+                    <%= link_to solicitud_valorar_path(x.id,'unlike') do %>
+    	    		  <span class="oi oi-thumb-down" title="No me gusta" aria-hidden="true"></span><%= x.negativo %>
+                    <% end %>
+    	    	</th>
+    	    </thead>
+    	    <tbody>
+    	    	<td><%= x.descripcion %></td>
+                <td class="actions text-right">                  
+                  <%= link_to '<span class="oi oi-chat" title="CLIC para Comentarios" aria-hidden="true"></span>'.html_safe, new_solicitud_comment_path(x), remote: true %>
+                </td>
+    	    </tbody>    	    
+    	<% end %>
+    </table>
+<% else %>
+    <div class="sin_registros">De momento, no hay solicitud registrada</div>
+<% end %>

@@ -1,0 +1,15 @@
+<%= hidden_field(:comment, :solicitud_id, value: solicitud_id) %>
+<% if !comments.nil? and comments.size > 0 %>
+    <table class="table table-hover">
+        <thead>
+            <th>Descripción</th>
+        </thead>        
+    	<% comments.each do |x| %>
+    	    <tbody>
+    	    	<td><%= x.descripcion %></td>             
+    	    </tbody>    	    
+    	<% end %>
+    </table>
+<% else %>
+    <div class="sin_registros">De momento, no hay comentario registrado</div>
+<% end %>
