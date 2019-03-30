@@ -29,7 +29,7 @@
     	    	</th>
     	    </thead>
     	    <tbody>
-    	    	<td><%= x.descripcion %></td>
+    	    	<td><%= x.descripcion.html_safe %></td>
                 <td class="actions text-right">                  
                   <%= link_to '<span class="oi oi-chat" title="CLIC para Comentarios" aria-hidden="true"></span>'.html_safe, new_solicitud_comment_path(x), remote: true %>
                 </td>
