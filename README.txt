@@ -16,3 +16,5 @@ Dashboard para solicitudes de usuarios
 6. En el formulario de solicitudes, el campo descripcion está basado en la gema tinymce, para cumplir con el Rich Text Editor
 
 7. El nombre de la BD, quedará a juicio del usuario final que probará la aplicación. Para este ejemplo, recibió el nombre: personal, perteneciente al usuario: postgres
+
+8. El enlace principal de la aplicación, está en la raíz de la misma. De modo que el url es: http://localhost/3000
