@@ -15,9 +15,9 @@
           <%= f.submit 'Agregar', class: "btn btn-primary btn-lg btn-block" %>
         </div>
         <div id="lista_comments">
-          <%= render 'comments/lista', comments: @comments, solicitud_id: @solicitud.id %>
-        </div>
-      <% end %>
+          <%= render 'comments/lista' %>
+        </div>         
+      <% end %>     
     </div>
   </div>
 </div>

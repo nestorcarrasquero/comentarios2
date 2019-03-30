@@ -3,8 +3,8 @@ class CommentsController < ApplicationController
 	before_action :get_comments, only: [:new]
 
 	# Nuevo registro de comentarios vinculados a solicitud
-	def new
-		@comment = Comment.new		
+	def new	
+	    @comment = Comment.new		
 	end
 
 	# Módulo para crear registro
@@ -13,6 +13,7 @@ class CommentsController < ApplicationController
         if @comment.save
         	flash[:notice] = 'Comentario vinculado satisfactoriamente'
         	get_comments
+        	@comment = Comment.new
 			respond_to do |format|
         		format.js
     		end
